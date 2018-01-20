@@ -88,7 +88,10 @@
             if (index >= 0) {
                 name = name.substr(0, index)
                 $.writeln(name)
+                var visible = artLayer.visible
                 artLayer.name = name
+                // 強制でvisibleがtrueになってしまうようなので元に戻す
+                artLayer.visible = visible;
             }
         }
     }
@@ -127,7 +130,10 @@
                 temp = temp.join(" ");
                 newName = name + sep + temp;
                 $.writeln(newName);
+                var visible = artLayer.visible
                 artLayer.name = newName;
+                //  強制でvisibleがtrueになってしまうようなので元に戻す
+                artLayer.visible = visible
             }
         }
     }
